@@ -106,6 +106,7 @@ namespace ScreenSaver
         #region Form
         private void ScreenSaverForm_Load(object sender, EventArgs e)
         {
+
             if (!previewMode && !windowMode) Cursor.Hide();
 
             LayoutPlayer();
@@ -315,6 +316,7 @@ namespace ScreenSaver
             if (showVideo)
             {
                 string url = Movies[currentVideoIndex].url;
+                labLocation.Text = Movies[currentVideoIndex].accessibilityLabel;
 
                 if (Caching.IsHit(url))
                 {
@@ -366,7 +368,7 @@ namespace ScreenSaver
 
             ResizePlayer();
         }
-        
+
         /// <summary>
         /// Resize & center player
         /// </summary>
